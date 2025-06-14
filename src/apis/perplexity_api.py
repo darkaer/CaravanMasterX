@@ -8,6 +8,7 @@ import logging
 from datetime import datetime
 from typing import Dict, Optional
 import os
+import re
 
 logger = logging.getLogger(__name__)
 
@@ -95,9 +96,12 @@ class PerplexityAPI:
         return prompt
     
     def _parse_market_analysis(self, response: dict) -> dict:
-        """Parse Perplexity response into structured analysis, extracting summary if reasoning model used."""
+        """Parse Perplexity response into structured analysis, extracting summary if reasoning model used. If a JSON object is present after reasoning, extract and return it."""
         try:
             content = response['choices'][0]['message']['content']
+            json_obj = self._extract_json_from_reasoning(content)
+            if json_obj:
+                return json_obj
             summary = self._extract_summary_from_reasoning(content)
             return {
                 'timestamp': datetime.now().isoformat(),
@@ -152,3 +156,15 @@ class PerplexityAPI:
         # Fallback: last paragraph
         paragraphs = [p.strip() for p in content.split('\n\n') if p.strip()]
         return paragraphs[-1] if paragraphs else content
+
+    def _extract_json_from_reasoning(self, content: str):
+        """Extract the first valid JSON object from the reasoning model output."""
+        match = re.search(r'({.*})', content, re.DOTALL)
+        if match:
+            json_str = match.group(1)
+            try:
+                import json
+                return json.loads(json_str)
+            except json.JSONDecodeError:
+                pass
+        return None

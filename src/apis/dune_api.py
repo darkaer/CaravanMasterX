@@ -13,6 +13,7 @@ import random
 logger = logging.getLogger(__name__)
 
 DUNE_API_KEY = os.getenv('DUNE_API_KEY')
+print("DUNE_API_KEY loaded:", (DUNE_API_KEY[:6] + '...' if DUNE_API_KEY else 'NOT SET'))
 BASE_URL = 'https://api.dune.com/api/v1'
 
 # Rate limiting parameters

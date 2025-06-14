@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv()
 from dune_api import DuneAPI
 
 EXCHANGE_FLOW_SQL = """
@@ -99,7 +101,7 @@ def main():
     }
     for name, sql in queries.items():
         try:
-            qid = dune.create_query(sql)
+            qid = dune.create_query(sql, name=name)
             print(f"{name} query ID: {qid}")
         except Exception as e:
             print(f"Error creating {name} query: {e}")
