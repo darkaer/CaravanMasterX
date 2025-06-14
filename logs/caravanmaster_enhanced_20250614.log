@@ -1,0 +1,47 @@
+2025-06-14 16:18:02,872 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 16:18:02,872 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 16:18:02,872 - apis.dune_api - INFO - Dune Analytics API initialized
+2025-06-14 16:18:02,872 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 16:18:02,872 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 16:18:02,872 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 16:18:02,872 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 16:18:02,872 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 16:18:04,232 - strategy.caravanmaster - ERROR - Error getting enhanced portfolio status: 'EnhancedCaravanMasterStrategy' object has no attribute '_assess_portfolio_health'
+2025-06-14 16:18:13,036 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 16:18:13,330 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 16:18:13,652 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT
+2025-06-14 16:21:25,869 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 16:21:25,869 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 16:21:25,869 - apis.dune_api - INFO - Dune Analytics API initialized
+2025-06-14 16:21:25,869 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 16:21:25,869 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 16:21:25,869 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 16:21:25,869 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 16:21:25,869 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 16:21:27,702 - strategy.caravanmaster - ERROR - Error getting enhanced portfolio status: 'EnhancedCaravanMasterStrategy' object has no attribute '_calculate_risk_metrics'
+2025-06-14 16:21:35,175 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 16:21:35,894 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 16:21:36,611 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT
+2025-06-14 16:23:24,927 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 16:23:24,927 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 16:23:24,928 - apis.dune_api - INFO - Dune Analytics API initialized
+2025-06-14 16:23:24,928 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 16:23:24,928 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 16:23:24,928 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 16:23:24,928 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 16:23:24,928 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 16:23:26,385 - strategy.caravanmaster - ERROR - Error getting enhanced portfolio status: 'EnhancedCaravanMasterStrategy' object has no attribute '_calculate_trading_capacity'
+2025-06-14 16:23:33,227 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 16:23:33,553 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 16:23:33,856 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT
+2025-06-14 16:26:13,566 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 16:26:13,566 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 16:26:13,566 - apis.dune_api - INFO - Dune Analytics API initialized
+2025-06-14 16:26:13,566 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 16:26:13,566 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 16:26:13,566 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 16:26:13,566 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 16:26:13,566 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 16:26:24,970 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 16:26:25,287 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 16:26:25,597 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT

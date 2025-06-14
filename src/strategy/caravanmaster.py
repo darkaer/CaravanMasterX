@@ -11,7 +11,7 @@ import numpy as np
 from .order_book_analyzer import RealTimeOrderBookAnalyzer
 from .volume_profile import VolumeProfileAnalyzer
 from .twap_strategy import TWAPStrategy
-from ..utils.volatility_adjuster import VolatilityAdjuster
+from src.utils.volatility_adjuster import VolatilityAdjuster
 
 logger = logging.getLogger(__name__)
 
@@ -293,3 +293,141 @@ class EnhancedCaravanMasterStrategy:
             base_confidence += 0.1
         
         return min(base_confidence, 1.0)
+
+    def _assess_portfolio_health(self, balance_data, market_prices):
+        """Assess the overall health of the trading portfolio"""
+        try:
+            # Get USDT balance
+            usdt_balance = balance_data.get('usdt_balance', 0) if balance_data else 0
+            
+            # Determine portfolio health based on available balance
+            if usdt_balance > 100:
+                health = 'Excellent'
+            elif usdt_balance > 50:
+                health = 'Good'
+            elif usdt_balance > 20:
+                health = 'Fair'
+            else:
+                health = 'Poor'
+                
+            # Check if we have active positions
+            has_positions = False
+            if balance_data and 'balances' in balance_data:
+                for symbol, data in balance_data['balances'].items():
+                    if symbol != 'USDT' and data.get('total', 0) > 0:
+                        has_positions = True
+                        break
+            
+            # Adjust health based on market conditions and positions
+            if has_positions:
+                # Check if positions are profitable based on market data
+                # This is a simplified assessment
+                health_adjustment = 0
+                
+                # Return final assessment
+                return health
+            
+            return health
+            
+        except Exception as e:
+            logger.error(f"Error assessing portfolio health: {e}")
+            return 'Unknown'
+
+    def _calculate_risk_metrics(self, balance_data):
+        """Calculate comprehensive risk metrics for the trading portfolio"""
+        try:
+            if not balance_data or not balance_data.get('success'):
+                return {
+                    'total_exposure': 0,
+                    'risk_percentage': 0,
+                    'leverage_ratio': 1,
+                    'diversification_score': 0,
+                    'volatility_risk': 'LOW'
+                }
+            
+            # Get available balance
+            usdt_balance = balance_data.get('usdt_balance', 0)
+            balances = balance_data.get('balances', {})
+            
+            # Calculate total portfolio value
+            total_portfolio_value = usdt_balance
+            
+            # Calculate risk exposure from non-USDT positions
+            risk_exposure = 0
+            position_count = 0
+            
+            for symbol, data in balances.items():
+                if symbol != 'USDT' and data.get('total', 0) > 0:
+                    position_value = data.get('total', 0)
+                    risk_exposure += position_value
+                    position_count += 1
+                    total_portfolio_value += position_value
+            
+            # Calculate risk metrics
+            risk_percentage = (risk_exposure / total_portfolio_value * 100) if total_portfolio_value > 0 else 0
+            
+            # Diversification score (higher is better)
+            diversification_score = min(position_count * 25, 100)  # Max 100 for 4+ positions
+            
+            # Volatility risk assessment
+            if risk_percentage > 80:
+                volatility_risk = 'EXTREME'
+            elif risk_percentage > 60:
+                volatility_risk = 'HIGH'
+            elif risk_percentage > 40:
+                volatility_risk = 'MEDIUM'
+            else:
+                volatility_risk = 'LOW'
+            
+            return {
+                'total_exposure': risk_exposure,
+                'risk_percentage': round(risk_percentage, 2),
+                'leverage_ratio': 1,  # Default for spot trading
+                'diversification_score': diversification_score,
+                'volatility_risk': volatility_risk,
+                'position_count': position_count,
+                'total_portfolio_value': total_portfolio_value
+            }
+            
+        except Exception as e:
+            logger.error(f"Error calculating risk metrics: {e}")
+            return {
+                'total_exposure': 0,
+                'risk_percentage': 0,
+                'leverage_ratio': 1,
+                'diversification_score': 0,
+                'volatility_risk': 'UNKNOWN'
+            }
+
+    def _calculate_trading_capacity(self, balance_data):
+        """Calculate available trading capacity based on account balance and risk limits"""
+        try:
+            if not balance_data or not balance_data.get('success'):
+                return {
+                    'max_position_size': 0,
+                    'available_margin': 0,
+                    'recommended_position_size': 0
+                }
+            
+            usdt_balance = balance_data.get('usdt_balance', 0)
+            
+            # Calculate capacity based on risk management rules
+            max_position_size = usdt_balance * 0.30  # 30% max per position
+            available_margin = usdt_balance * 0.90   # 90% available for trading
+            recommended_position_size = usdt_balance * 0.20  # 20% recommended per position
+            
+            return {
+                'max_position_size': round(max_position_size, 2),
+                'available_margin': round(available_margin, 2),
+                'recommended_position_size': round(recommended_position_size, 2),
+                'total_balance': usdt_balance
+            }
+            
+        except Exception as e:
+            logger.error(f"Error calculating trading capacity: {e}")
+            return {
+                'max_position_size': 0,
+                'available_margin': 0,
+                'recommended_position_size': 0,
+                'total_balance': 0
+            }
