@@ -8,6 +8,7 @@ import os
 import unittest
 import logging
 import asyncio
+from dotenv import load_dotenv
 
 # Add src to path for testing
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
@@ -21,6 +22,8 @@ from config.api_keys import API_KEYS
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+load_dotenv()
 
 class TestPionexAPI(unittest.TestCase):
     def setUp(self):

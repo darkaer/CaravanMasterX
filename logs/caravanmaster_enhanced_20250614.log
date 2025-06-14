@@ -133,3 +133,83 @@
 2025-06-14 18:45:52,576 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
 2025-06-14 18:45:52,988 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
 2025-06-14 18:45:53,274 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT
+2025-06-14 19:22:34,369 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 19:22:34,369 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 19:22:34,369 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 19:22:34,369 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 19:22:34,369 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 19:22:34,369 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 19:22:34,369 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 19:23:03,209 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 19:23:03,690 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 19:23:03,997 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT
+2025-06-14 19:23:10,071 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 19:23:10,071 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 19:23:10,071 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 19:23:10,071 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 19:23:10,071 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 19:23:10,071 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 19:23:10,071 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 19:23:30,151 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 19:23:30,444 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 19:23:30,826 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT
+2025-06-14 19:25:28,632 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 19:25:28,632 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 19:25:28,632 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 19:25:28,632 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 19:25:28,632 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 19:25:28,632 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 19:25:28,632 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 19:25:53,370 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 19:25:53,782 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 19:25:54,089 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT
+2025-06-14 19:32:12,181 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 19:32:12,181 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 19:32:12,181 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 19:32:12,181 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 19:32:12,181 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 19:32:12,181 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 19:32:12,181 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 19:32:43,271 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 19:32:44,202 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 19:32:44,504 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT
+2025-06-14 19:32:59,021 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 19:32:59,021 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 19:32:59,022 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 19:32:59,022 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 19:32:59,022 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 19:32:59,022 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 19:32:59,022 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 19:33:20,761 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 19:33:21,122 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 19:33:21,480 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT
+2025-06-14 19:39:27,126 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 19:39:27,126 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 19:39:27,126 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 19:39:27,126 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 19:39:27,126 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 19:39:27,126 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 19:39:27,126 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 19:39:51,624 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 19:39:52,448 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 19:39:52,750 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT
+2025-06-14 19:41:23,563 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 19:41:23,563 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 19:41:23,563 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 19:41:23,563 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 19:41:23,563 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 19:41:23,563 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 19:41:23,564 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 19:41:44,679 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 19:41:44,974 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 19:41:45,279 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT
+2025-06-14 19:44:59,991 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 19:44:59,991 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 19:44:59,991 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 19:44:59,991 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 19:44:59,991 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 19:44:59,991 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 19:44:59,991 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 19:45:34,976 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 19:45:35,292 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 19:45:35,583 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT

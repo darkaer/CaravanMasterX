@@ -166,7 +166,7 @@ class PionexAPI:
     
     def get_caravan_assets(self):
         """Get prices for CaravanMaster target assets"""
-        assets = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT']
+        assets = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT', 'SUI/USDT']
         results = {}
         
         for asset in assets:

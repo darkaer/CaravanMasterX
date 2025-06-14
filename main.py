@@ -10,6 +10,7 @@ import logging
 import asyncio
 from datetime import datetime
 import json
+from dotenv import load_dotenv
 
 # Add src to path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
@@ -21,6 +22,8 @@ from strategy.caravanmaster import EnhancedCaravanMasterStrategy
 from intelligence.market_analyzer import MarketIntelligenceEngine
 from config.settings import TRADING_CONFIG
 from config.api_keys import API_KEYS
+
+load_dotenv()
 
 # Configure enhanced logging
 logging.basicConfig(

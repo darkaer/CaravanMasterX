@@ -12,8 +12,6 @@ import random
 
 logger = logging.getLogger(__name__)
 
-DUNE_API_KEY = os.getenv('DUNE_API_KEY')
-print("DUNE_API_KEY loaded:", (DUNE_API_KEY[:6] + '...' if DUNE_API_KEY else 'NOT SET'))
 BASE_URL = 'https://api.dune.com/api/v1'
 
 # Rate limiting parameters
@@ -31,9 +29,11 @@ WEIGHTS = {
 
 class DuneAPI:
     def __init__(self):
+        self.api_key = os.getenv('DUNE_API_KEY')
+        print("DUNE_API_KEY loaded:", (self.api_key[:6] + '...' if self.api_key else 'NOT SET'))
         self.headers = {
             'Content-Type': 'application/json',
-            'X-DUNE-API-KEY': DUNE_API_KEY
+            'X-DUNE-API-KEY': self.api_key
         }
         self.last_request_time = 0
 
@@ -82,7 +82,7 @@ class DuneAPI:
 
 class DuneAnalyticsEnhanced:
     def __init__(self, api_key=None, demo_mode=False):
-        self.api_key = api_key or DUNE_API_KEY
+        self.api_key = api_key or os.getenv('DUNE_API_KEY')
         self.demo_mode = demo_mode
         self.api = DuneAPI()
         self.query_ids = {
