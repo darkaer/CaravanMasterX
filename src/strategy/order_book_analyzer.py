@@ -8,7 +8,7 @@ import numpy as np
 
 logger = logging.getLogger(__name__)
 
-class OrderBookAnalyzer:
+class RealTimeOrderBookAnalyzer:
     def __init__(self):
         self.order_books = {}
         

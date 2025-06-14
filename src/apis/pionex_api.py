@@ -153,7 +153,7 @@ class PionexAPI:
         tickers = self.get_market_prices()
         if isinstance(tickers, dict) and 'data' in tickers:
             for ticker in tickers['data']:
-                if ticker.get('symbol') == symbol:
+                if isinstance(ticker, dict) and ticker.get('symbol') == symbol:
                     return {
                         'symbol': symbol,
                         'price': float(ticker.get('close', 0)),

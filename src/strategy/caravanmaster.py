@@ -11,7 +11,7 @@ import numpy as np
 from .order_book_analyzer import RealTimeOrderBookAnalyzer
 from .volume_profile import VolumeProfileAnalyzer
 from .twap_strategy import TWAPStrategy
-from ..utils.volatility_adjuster import VolatilityAdjustedEntry
+from ..utils.volatility_adjuster import VolatilityAdjuster
 
 logger = logging.getLogger(__name__)
 
@@ -26,7 +26,7 @@ class EnhancedCaravanMasterStrategy:
         self.order_book_analyzer = RealTimeOrderBookAnalyzer()
         self.volume_profile_analyzer = VolumeProfileAnalyzer(pionex_api)
         self.twap_strategy = TWAPStrategy(pionex_api)
-        self.volatility_adjuster = VolatilityAdjustedEntry(pionex_api)
+        self.volatility_adjuster = VolatilityAdjuster(pionex_api)
         
         # Strategy state
         self.last_analysis = None
