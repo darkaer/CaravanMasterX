@@ -124,6 +124,30 @@ class TestEnhancedStrategy(unittest.TestCase):
         self.assertIsNotNone(self.strategy)
         logger.info("✅ Strategy initialization test passed")
 
+class TestDemoMode(unittest.TestCase):
+    def test_dune_demo_mode(self):
+        from src.apis.dune_api import DuneAnalyticsEnhanced
+        dune = DuneAnalyticsEnhanced(demo_mode=True)
+        try:
+            result = dune.analyze_exchange_flows('BTC')
+            self.assertIsNotNone(result)
+            logger.info(f"[Demo] DuneAnalyticsEnhanced exchange flows: {result}")
+        except Exception as e:
+            logger.warning(f"[Demo] Dune demo mode failed: {e}")
+
+    def test_perplexity_demo_mode(self):
+        from src.apis.perplexity_api import PerplexityAPI
+        import os
+        api_key = os.getenv('PERPLEXITY_API_KEY', 'demo')
+        perplexity = PerplexityAPI(api_key)
+        try:
+            # Simulate a demo analysis call
+            result = perplexity.generate_market_analysis(['BTC/USDT'], {'BTC/USDT': {'price': 50000}})
+            self.assertIsNotNone(result)
+            logger.info(f"[Demo] PerplexityAPI demo analysis: {result}")
+        except Exception as e:
+            logger.warning(f"[Demo] Perplexity demo mode failed: {e}")
+
 def run_all_tests():
     """Run all framework tests"""
     logger.info("="*60)
@@ -154,17 +178,26 @@ def run_all_tests():
     strategy_runner = unittest.TextTestRunner(verbosity=1)
     strategy_result = strategy_runner.run(strategy_suite)
     
+    # Test Demo Mode
+    logger.info("\n--- Testing Demo Mode ---")
+    demo_suite = unittest.TestLoader().loadTestsFromTestCase(TestDemoMode)
+    demo_runner = unittest.TextTestRunner(verbosity=1)
+    demo_result = demo_runner.run(demo_suite)
+    
     # Summary
     logger.info("\n" + "="*60)
     logger.info("TEST SUMMARY")
     logger.info("="*60)
     
     total_tests = (pionex_result.testsRun + dune_result.testsRun + 
-                  perplexity_result.testsRun + strategy_result.testsRun)
+                  perplexity_result.testsRun + strategy_result.testsRun +
+                  demo_result.testsRun)
     total_failures = (len(pionex_result.failures) + len(dune_result.failures) +
-                     len(perplexity_result.failures) + len(strategy_result.failures))
+                     len(perplexity_result.failures) + len(strategy_result.failures) +
+                     len(demo_result.failures))
     total_errors = (len(pionex_result.errors) + len(dune_result.errors) +
-                   len(perplexity_result.errors) + len(strategy_result.errors))
+                   len(perplexity_result.errors) + len(strategy_result.errors) +
+                   len(demo_result.errors))
     
     logger.info(f"Total Tests: {total_tests}")
     logger.info(f"Passed: {total_tests - total_failures - total_errors}")

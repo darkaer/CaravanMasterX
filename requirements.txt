@@ -34,3 +34,9 @@ flake8>=6.0.0
 ta-lib>=0.4.0
 ccxt>=4.0.0
 websocket-client>=1.6.0
+
+# On-chain analytics and enhanced API clients
+httpx>=0.25.0  # For async HTTP requests (Perplexity, Dune)
+tqdm>=4.66.0   # Progress bars for CLI
+rich>=13.0.0   # Enhanced CLI output
+# dune-client>=0.7.0  # Uncomment if using official Dune client (optional)

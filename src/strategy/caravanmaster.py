@@ -12,6 +12,9 @@ from .order_book_analyzer import RealTimeOrderBookAnalyzer
 from .volume_profile import VolumeProfileAnalyzer
 from .twap_strategy import TWAPStrategy
 from src.utils.volatility_adjuster import VolatilityAdjuster
+from src.apis.dune_integration import DuneIntegration
+import os
+from src.apis.dune_api import DuneAnalyticsEnhanced
 
 logger = logging.getLogger(__name__)
 
@@ -31,6 +34,8 @@ class EnhancedCaravanMasterStrategy:
         # Strategy state
         self.last_analysis = None
         self.active_signals = []
+        
+        self.dune = DuneAnalyticsEnhanced(demo_mode=os.getenv('DUNE_DEMO_MODE', 'false').lower() == 'true')
         
         logger.info("🎯 Enhanced CaravanMaster Strategy initialized")
         
@@ -431,3 +436,13 @@ class EnhancedCaravanMasterStrategy:
                 'recommended_position_size': 0,
                 'total_balance': 0
             }
+
+    def analyze_onchain(self):
+        return self.dune.get_composite_signal()
+
+    def execute_strategy(self):
+        # existing code
+        onchain_data = self.analyze_onchain()
+        # Example: integrate onchain_data['composite_signal'] and onchain_data['composite_score']
+        # into your decision logic for trading signals, risk management, etc.
+        # ... rest of strategy ...

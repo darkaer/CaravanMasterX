@@ -64,7 +64,7 @@ class PerplexityAPI:
             return {"error": str(e)}
     
     def _build_market_analysis_prompt(self, symbols: list, market_data: dict) -> str:
-        """Build comprehensive market analysis prompt"""
+        """Build comprehensive market analysis prompt with explicit summary request for reasoning models."""
         prompt = f"""
         Analyze current cryptocurrency market conditions for trading decisions:
         
@@ -88,19 +88,21 @@ class PerplexityAPI:
         4. Optimal entry zones for long/short positions
         5. Recommended leverage and position sizing
         
+        After your reasoning, provide a concise summary of actionable trading recommendations for each asset.
         Format as structured trading intelligence with specific price levels and percentages.
         """
         
         return prompt
     
     def _parse_market_analysis(self, response: dict) -> dict:
-        """Parse Perplexity response into structured analysis"""
+        """Parse Perplexity response into structured analysis, extracting summary if reasoning model used."""
         try:
             content = response['choices'][0]['message']['content']
-            
+            summary = self._extract_summary_from_reasoning(content)
             return {
                 'timestamp': datetime.now().isoformat(),
                 'raw_analysis': content,
+                'summary': summary,
                 'sentiment': self._extract_sentiment(content),
                 'key_insights': self._extract_key_insights(content),
                 'trading_recommendations': self._extract_recommendations(content)
@@ -140,3 +142,13 @@ class PerplexityAPI:
             'timeframe': '1-24 hours',
             'risk_level': 'Medium'
         }
+
+    def _extract_summary_from_reasoning(self, content: str) -> str:
+        """Extract a concise summary or actionable recommendations from reasoning model output."""
+        lines = content.split('\n')
+        summary_lines = [line for line in lines if line.lower().startswith(('in summary', 'recommendation', 'summary', 'actionable'))]
+        if summary_lines:
+            return '\n'.join(summary_lines)
+        # Fallback: last paragraph
+        paragraphs = [p.strip() for p in content.split('\n\n') if p.strip()]
+        return paragraphs[-1] if paragraphs else content

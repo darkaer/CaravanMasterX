@@ -44,9 +44,7 @@ class EnhancedCaravanMasterBot:
             api_secret=API_KEYS['PIONEX_API_SECRET']
         )
         
-        self.dune_api = DuneAPI(
-            api_key=API_KEYS['DUNE_API_KEY']
-        )
+        self.dune_api = DuneAPI()
         
         self.perplexity_api = PerplexityAPI(
             api_key=API_KEYS['PERPLEXITY_API_KEY']
