@@ -45,3 +45,25 @@
 2025-06-14 16:26:24,970 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
 2025-06-14 16:26:25,287 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
 2025-06-14 16:26:25,597 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT
+2025-06-14 16:36:52,578 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 16:36:52,578 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 16:36:52,578 - apis.dune_api - INFO - Dune Analytics API initialized
+2025-06-14 16:36:52,578 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 16:36:52,578 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 16:36:52,578 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 16:36:52,578 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 16:36:52,578 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 16:37:02,520 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 16:37:02,932 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 16:37:03,245 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT
+2025-06-14 16:49:30,546 - __main__ - INFO - 🚀 Initializing Enhanced CaravanMaster Trading Framework v3.0
+2025-06-14 16:49:30,546 - apis.pionex_api - INFO - Pionex API initialized
+2025-06-14 16:49:30,546 - apis.dune_api - INFO - Dune Analytics API initialized
+2025-06-14 16:49:30,546 - apis.perplexity_api - INFO - 🧠 Perplexity API initialized for market intelligence
+2025-06-14 16:49:30,546 - intelligence.market_analyzer - INFO - 🧠 Market Intelligence Engine initialized
+2025-06-14 16:49:30,546 - strategy.caravanmaster - INFO - 🎯 Enhanced CaravanMaster Strategy initialized
+2025-06-14 16:49:30,546 - __main__ - INFO - ✅ Enhanced CaravanMaster initialization complete
+2025-06-14 16:49:30,546 - __main__ - INFO - 🔍 Starting Enhanced CaravanMaster Analysis
+2025-06-14 16:49:52,679 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for BTC/USDT
+2025-06-14 16:49:53,091 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for ETH/USDT
+2025-06-14 16:49:53,397 - strategy.caravanmaster - INFO - 🔍 Executing enhanced analysis for SOL/USDT

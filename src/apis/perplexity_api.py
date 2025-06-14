@@ -7,6 +7,7 @@ import requests
 import logging
 from datetime import datetime
 from typing import Dict, Optional
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -18,6 +19,7 @@ class PerplexityAPI:
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json"
         }
+        self.model = os.getenv("PERPLEXITY_MODEL", "sonar-reasoning-pro")
         
         logger.info("🧠 Perplexity API initialized for market intelligence")
         
@@ -31,7 +33,7 @@ class PerplexityAPI:
                 f"{self.base_url}/chat/completions",
                 headers=self.headers,
                 json={
-                    "model": "llama-3.1-sonar-small-128k-online",
+                    "model": self.model,
                     "messages": [
                         {
                             "role": "system",
