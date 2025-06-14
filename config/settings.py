@@ -2,6 +2,8 @@
 Enhanced Trading Configuration Settings for CaravanMaster
 """
 
+import os
+
 TRADING_CONFIG = {
     # Enhanced trading pairs
     'trading_pairs': ['BTC/USDT', 'ETH/USDT', 'SOL/USDT'],
@@ -20,7 +22,7 @@ TRADING_CONFIG = {
     # AI and intelligence settings
     'enable_ai_analysis': True,
     'ai_confidence_threshold': 0.7,
-    'perplexity_model': 'llama-3.1-sonar-small-128k-online',
+    'perplexity_model': os.getenv('PERPLEXITY_MODEL', 'sonar-reasoning-pro'),
     
     # Enhanced analysis settings
     'analysis_interval_seconds': 180,  # 3 minutes for enhanced analysis

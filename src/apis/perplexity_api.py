@@ -20,6 +20,8 @@ class PerplexityAPI:
             "Content-Type": "application/json"
         }
         self.model = os.getenv("PERPLEXITY_MODEL", "sonar-reasoning-pro")
+        self.temperature = float(os.getenv("PERPLEXITY_TEMPERATURE", 0.2))
+        self.max_tokens = int(os.getenv("PERPLEXITY_MAX_TOKENS", 1000))
         
         logger.info("🧠 Perplexity API initialized for market intelligence")
         
@@ -44,8 +46,8 @@ class PerplexityAPI:
                             "content": prompt
                         }
                     ],
-                    "max_tokens": 1000,
-                    "temperature": 0.2
+                    "max_tokens": self.max_tokens,
+                    "temperature": self.temperature
                 }
             )
             
