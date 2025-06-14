@@ -1,7 +1,22 @@
 #!/usr/bin/env python3
 """
-CaravanMaster Enhanced Trading Framework
-Integrating Perplexity API for market intelligence
+CaravanMasterX Main Entry Point
+
+Usage Example (EnhancedCaravanMasterX):
+
+    from src.strategy.enhanced_caravanmasterx import EnhancedCaravanMasterX
+    config = {
+        'dune_api_key': API_KEYS['DUNE_API_KEY'],
+        'base_risk_per_trade': 0.01,
+        'max_portfolio_risk': 0.30,
+        'max_total_exposure': 0.90,
+        'ml_sequence_length': 60,
+        'ml_prediction_horizon': 1,
+        'ml_model_type': 'ensemble',
+        'assets': ['BTC-USD', 'ETH-USD', 'SOL-USD']
+    }
+    orchestrator = EnhancedCaravanMasterX(config)
+    # ...
 """
 
 import sys
@@ -11,6 +26,7 @@ import asyncio
 from datetime import datetime
 import json
 from dotenv import load_dotenv
+import pandas as pd
 
 # Add src to path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
@@ -22,6 +38,7 @@ from strategy.caravanmaster import EnhancedCaravanMasterStrategy
 from intelligence.market_analyzer import MarketIntelligenceEngine
 from config.settings import TRADING_CONFIG
 from config.api_keys import API_KEYS
+from strategy.enhanced_caravanmasterx import EnhancedCaravanMasterX
 
 load_dotenv()
 
@@ -134,7 +151,31 @@ class EnhancedCaravanMasterBot:
 
 if __name__ == "__main__":
     async def main():
-        bot = EnhancedCaravanMasterBot()
-        await bot.run_enhanced_analysis()
+        # Example config for EnhancedCaravanMasterX
+        config = {
+            'dune_api_key': API_KEYS['DUNE_API_KEY'],
+            'base_risk_per_trade': 0.01,
+            'max_portfolio_risk': 0.30,
+            'max_total_exposure': 0.90,
+            'ml_sequence_length': 60,
+            'ml_prediction_horizon': 1,
+            'ml_model_type': 'ensemble',
+            'assets': ['BTC-USD', 'ETH-USD', 'SOL-USD']
+        }
+        orchestrator = EnhancedCaravanMasterX(config)
+        # Mock price data for demonstration
+        price_data = {
+            'BTC-USD': pd.DataFrame({'close': [70000, 70500, 71000, 71500, 72000], 'volume': [100, 110, 120, 130, 140]}),
+            'ETH-USD': pd.DataFrame({'close': [3500, 3550, 3600, 3650, 3700], 'volume': [200, 210, 220, 230, 240]}),
+            'SOL-USD': pd.DataFrame({'close': [150, 152, 154, 156, 158], 'volume': [300, 310, 320, 330, 340]})
+        }
+        signals = await orchestrator.generate_trading_signals(price_data)
+        print("\n=== ENHANCED CARAVANMASTERX SIGNALS ===")
+        for sig in signals:
+            print(sig)
     
     asyncio.run(main())
+
+# Old bot left for reference
+# class EnhancedCaravanMasterBot:
+#     ...

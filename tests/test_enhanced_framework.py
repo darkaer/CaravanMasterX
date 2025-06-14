@@ -9,6 +9,7 @@ import unittest
 import logging
 import asyncio
 from dotenv import load_dotenv
+import pandas as pd
 
 # Add src to path for testing
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
@@ -19,6 +20,7 @@ from src.apis.perplexity_api import PerplexityAPI
 from src.strategy.caravanmaster import EnhancedCaravanMasterStrategy
 from src.intelligence.market_analyzer import MarketIntelligenceEngine
 from config.api_keys import API_KEYS
+from strategy.enhanced_caravanmasterx import EnhancedCaravanMasterX
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -151,6 +153,29 @@ class TestDemoMode(unittest.TestCase):
         except Exception as e:
             logger.warning(f"[Demo] Perplexity demo mode failed: {e}")
 
+class TestEnhancedCaravanMasterX(unittest.TestCase):
+    def test_orchestrator_signal_generation(self):
+        config = {
+            'dune_api_key': 'demo',
+            'base_risk_per_trade': 0.01,
+            'max_portfolio_risk': 0.30,
+            'max_total_exposure': 0.90,
+            'ml_sequence_length': 60,
+            'ml_prediction_horizon': 1,
+            'ml_model_type': 'ensemble',
+            'assets': ['BTC-USD', 'ETH-USD', 'SOL-USD']
+        }
+        orchestrator = EnhancedCaravanMasterX(config)
+        price_data = {
+            'BTC-USD': pd.DataFrame({'close': [70000, 70500, 71000, 71500, 72000], 'volume': [100, 110, 120, 130, 140]}),
+            'ETH-USD': pd.DataFrame({'close': [3500, 3550, 3600, 3650, 3700], 'volume': [200, 210, 220, 230, 240]}),
+            'SOL-USD': pd.DataFrame({'close': [150, 152, 154, 156, 158], 'volume': [300, 310, 320, 330, 340]})
+        }
+        signals = asyncio.run(orchestrator.generate_trading_signals(price_data))
+        self.assertTrue(len(signals) > 0)
+        for sig in signals:
+            self.assertIn(sig.symbol, config['assets'])
+
 def run_all_tests():
     """Run all framework tests"""
     logger.info("="*60)
@@ -187,6 +212,12 @@ def run_all_tests():
     demo_runner = unittest.TextTestRunner(verbosity=1)
     demo_result = demo_runner.run(demo_suite)
     
+    # Test Enhanced Caravan Master X
+    logger.info("\n--- Testing Enhanced Caravan Master X ---")
+    enhanced_caravan_master_x_suite = unittest.TestLoader().loadTestsFromTestCase(TestEnhancedCaravanMasterX)
+    enhanced_caravan_master_x_runner = unittest.TextTestRunner(verbosity=1)
+    enhanced_caravan_master_x_result = enhanced_caravan_master_x_runner.run(enhanced_caravan_master_x_suite)
+    
     # Summary
     logger.info("\n" + "="*60)
     logger.info("TEST SUMMARY")
@@ -194,13 +225,13 @@ def run_all_tests():
     
     total_tests = (pionex_result.testsRun + dune_result.testsRun + 
                   perplexity_result.testsRun + strategy_result.testsRun +
-                  demo_result.testsRun)
+                  demo_result.testsRun + enhanced_caravan_master_x_result.testsRun)
     total_failures = (len(pionex_result.failures) + len(dune_result.failures) +
                      len(perplexity_result.failures) + len(strategy_result.failures) +
-                     len(demo_result.failures))
+                     len(demo_result.failures) + len(enhanced_caravan_master_x_result.failures))
     total_errors = (len(pionex_result.errors) + len(dune_result.errors) +
                    len(perplexity_result.errors) + len(strategy_result.errors) +
-                   len(demo_result.errors))
+                   len(demo_result.errors) + len(enhanced_caravan_master_x_result.errors))
     
     logger.info(f"Total Tests: {total_tests}")
     logger.info(f"Passed: {total_tests - total_failures - total_errors}")

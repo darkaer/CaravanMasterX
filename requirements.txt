@@ -40,3 +40,9 @@ httpx>=0.25.0  # For async HTTP requests (Perplexity, Dune)
 tqdm>=4.66.0   # Progress bars for CLI
 rich>=13.0.0   # Enhanced CLI output
 # dune-client>=0.7.0  # Uncomment if using official Dune client (optional)
+
+# New dependencies
+scipy>=1.10.0
+tensorflow>=2.12.0
+scikit-learn>=1.2.0
+joblib>=1.2.0
